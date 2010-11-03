@@ -12,6 +12,7 @@ class Story(models.Model):
 	user = models.ForeignKey('auth.User')
 	date_added = models.DateTimeField(default=datetime.datetime.now)
 	expiration_date = models.DateTimeField(null=True,blank=True)
+	url = models.URLField(null=True,blank=True) # useful for feeds
 	short_description = models.TextField()
 	long_description = models.TextField()
 	category = models.CharField(max_length=55) # A 'key' for the type of story
